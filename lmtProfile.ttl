@@ -11,7 +11,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://opensource.ieee.org/lmt/terms/> a rdfs:Class ;
-    dct:description "An RDF vocabulary for describing the RDF classes, properties, and concepts of a learning object."@en ;
+    dct:description "An RDF profile vocabulary for describing the RDF classes, properties, and concepts of a learning object that have been: (1) defined in an LMT namespace; and (2) reused from other namespaces."@en ;
     dct:title "Learning Metadata terms"@en  .
     
 #------------
