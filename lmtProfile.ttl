@@ -75,9 +75,35 @@ lrmi:educationLevel a rdf:Property ;
     sdo:rangeIncludes <http://www.w3.org/2004/02/skos/core#Concept> ;
     rdfs:isDefinedBy <http://purl.org/dcx/lrmi-terms/> .
     
-lrmi:hasEvent a rdf:Property ;
+lmt:hasEvent a rdf:Property ;
     rdfs:label "has event"@en ;
     rdfs:comment "A related event based on this LearningResource."@en ;
     sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
     sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/LearningEvent> ; 
-    rdfs:isDefinedBy <http://purl.org/dcx/lrmi-terms/> .
+    rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
+    
+dct:hasPart a rdf:Property ;
+    rdfs:label "has part"@en ;
+    rdfs:comment "A related resource that is included either physically or logically in the described resource."@en ;
+    sdo:domainIncludes  
+        <https://opensource.ieee.org/lmt/terms/LearningResource> ,
+        <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
+    sdo:rangeIncludes 
+        <https://opensource.ieee.org/lmt/terms/LearningResource> ,
+        <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+    
+lmt:hasRepresentation a rdf:Property ;
+    rdfs:label "has representation"@en ;
+    rdfs:comment "A related LearningResource representing the same work and expression in a different tangible medium (format)."@en ;
+    dct:description "For a related resource that alters the work and expression, use either the hasVersion or isBasedOn property depending on the circumstances."@en-US ;
+    sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
+    sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ; 
+    rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
+    
+dct:hasVersion a rdf:Property ;
+    rdfs:label "has version"@en ;
+    rdfs:comment "A related resource that is a version, edition, or adaptation of the described resource."@en ;
+    sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
+    sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/Learningresource> ; 
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
