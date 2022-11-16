@@ -207,16 +207,6 @@ dct:subject a rdf:Property ;
     sdo:rangeIncludes <http://www.w3.org/2004/02/skos/core#Concept> ;
     rdfs:isDefinedBy <http://purl.org/dc/terms/> .
     
-lrmi:teaches a rdf:Property ;
-    rdfs:label "teaches"@en ;
-    rdfs:comment "The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term."@en-US ;
-    dct:description "A specific Competency that this learning object is intended to teach."@en-US ;
-    sdo:domainIncludes  
-        <https://opensource.ieee.org/lmt/terms/LearningResource> ,
-        <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
-    sdo:rangeIncludes <http://www.w3.org/2004/02/skos/core#Concept> ;
-    rdfs:isDefinedBy <http://purl.org/dcx/lrmi-terms/> .
-    
 dct:temporal a rdf:Property ;
     rdfs:label "temporal"@en ;
     rdfs:comment "Temporal characteristics of the resource."@en ;
