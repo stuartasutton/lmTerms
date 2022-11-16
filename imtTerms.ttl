@@ -1,0 +1,62 @@
+@prefix ceterms: <http://purl.org/ctdl/terms/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix lmt: <https://opensource.ieee.org/lmt/terms/> .
+@prefix lrmi: <http://purl.org/dcx/lrmi-terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix scd: <https://opensource.ieee.org/scd/terms/> .
+@prefix sdo: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://opensource.ieee.org/lmt/terms/> a rdfs:Class ;
+    dct:description "An RDF vocabulary for describing the RDF classes, properties defined in the LMT namespace."@en ;
+    dct:title "Learning Metadata terms"@en  .
+    
+#------------
+# CLASSES
+#------------
+
+lmt:LearningEvent a rdfs:Class ;
+    rdfs:label "Learning Event"@en ;
+    rdfs:comment "An event based on a LearningResource."@en ;
+    dct:description "An ephemeral resource with unique combinations of time, space (place), agency and other event-specific attributes; a fixing (recording) of a LearningEvent in any tangible medium, now known or later developed, results in a new persistent LearningResource."@en-US ;
+    rdfs:subClassOf lmt:LearningObject ;
+    rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
+    
+lmt:LearningObject a rdfs:Class ;
+    rdfs:label "Learning Object"@en ;
+    rdfs:comment "An abstract class of which LearningResource and LearningInstantiation are subclasses."@en ;
+    rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
+    
+lmt:LearningResource a rdfs:Class ;
+    rdfs:label "Learning Resource"@en ;
+    rdfs:comment "A persistent resource that has one or more physical or digital representations, and that explicitly involves, specifies, or entails a learning activity or learning experience."@en ;
+    rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
+    
+#------------
+# PROPERTIES
+#------------
+    
+lmt:hasEvent a rdf:Property ;
+    rdfs:label "has event"@en ;
+    rdfs:comment "A related event based on this LearningResource."@en ;
+    sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
+    sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/LearningEvent> ; 
+    rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
+    
+lmt:hasRepresentation a rdf:Property ;
+    rdfs:label "has representation"@en ;
+    rdfs:comment "A related LearningResource representing the same work and expression in a different tangible medium (format)."@en ;
+    dct:description "For a related resource that alters the work and expression, use either the hasVersion or isBasedOn property depending on the circumstances."@en-US ;
+    sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
+    sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ; 
+    rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
+    
+lmt:isEventOf a rdf:Property ;
+    rdfs:label "is event of"@en ;
+    rdfs:comment "The LearningResource on which this LearningEvent is based."@en ;
+    sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
+    sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/LearningEvent> ; 
+    rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
