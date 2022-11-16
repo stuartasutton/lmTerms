@@ -11,7 +11,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://opensource.ieee.org/lmt/terms/> a rdfs:Class ;
-    dct:description "An RDF profile vocabulary for describing the RDF classes, properties, and concepts of a learning object that have been: (1) defined in an LMT namespace; and (2) reused from other namespaces."@en ;
+    dct:description "An TEMPORARY RDF profile vocabulary for describing the RDF classes, properties, and concepts of a learning object that have been: (1) defined in an LMT namespace; and (2) reused from other namespaces."@en ;
     dct:title "Learning Metadata terms"@en  .
     
 #------------
@@ -107,3 +107,132 @@ dct:hasVersion a rdf:Property ;
     sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
     sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/Learningresource> ; 
     rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+    
+dct:instructionalMethod a rdf:Property ;
+    rdfs:label "instructional method"@en ;
+    rdfs:comment "A process, used to engender knowledge, attitudes and skills, that the described resource is designed to support."@en ;
+    dct:description "Instructional Method typically includes ways of presenting instructional materials or conducting instructional activities, patterns of learner-to-learner and learner-to-instructor interactions, and mechanisms by which group and individual levels of learning are measured. Instructional methods include all aspects of the instruction and learning processes from planning and implementation through evaluation and feedback."@en-US ;
+    sdo:domainIncludes  
+        <https://opensource.ieee.org/lmt/terms/LearningResource> ,
+        <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
+    sdo:rangeIncludes <http://www.w3.org/2004/02/skos/core#Concept>  ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+    
+sdo:instructor a rdf:Property ;
+    rdfs:label "instructor"@en ;
+    rdfs:comment "A person assigned to instruct or provide instructional assistance for the CourseInstance."@en ;
+    sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
+    sdo:rangeIncludes <http://schema.org/Person> ; 
+    rdfs:isDefinedBy <http://schema.org/> .
+    
+lmt:isEventOf a rdf:Property ;
+    rdfs:label "is event of"@en ;
+    rdfs:comment "The LearningResource on which this LearningEvent is based."@en ;
+    sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
+    sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/LearningEvent> ; 
+    rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
+    
+dct:isPartOf a rdf:Property ;
+    rdfs:label "is part of"@en ;
+    rdfs:comment "A related resource in which the described resource is physically or logically included."@en ;
+    sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
+    sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+    
+dct:isVersionOf a rdf:Property ;
+    rdfs:label "is version of"@en ;
+    rdfs:comment "A related resource of which the described resource is a version, edition, or adaptation."@en ;
+    sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
+    sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+    
+sdo:keywords a rdf:Property ;
+    rdfs:label "keywords"@en ;
+    rdfs:comment "Keywords or tags used to describe some item."@en ;
+    dct:description "Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property."@en-US ;
+    sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
+    sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ; 
+    rdfs:isDefinedBy <http://schema.org/> .
+    
+dct:language a rdf:Property ;
+    rdfs:label "language"@en ;
+    rdfs:comment "A language of the resource."@en ;
+    dct:description "Recommended practice is to use either a non-literal value representing a language from a controlled vocabulary such as ISO 639-2 or ISO 639-3, or a literal value consisting of an IETF Best Current Practice 47 [IETF-BCP47] language tag."@en-US ;
+    sdo:domainIncludes  
+        <https://opensource.ieee.org/lmt/terms/LearningResource> ,
+        <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
+    sdo:rangeIncludes 
+        <http://www.w3.org/2004/02/skos/core#Concept> ,
+        <http://www.w3.org/2000/01/rdf-schema#Literal> ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+    
+sdo:offeredBy a rdf:Property ;
+    rdfs:label "offered by"@en ;
+    rdfs:comment "A pointer to the organization or person making the offer."@en ;
+    sdo:domainIncludes 
+        <https://opensource.ieee.org/lmt/terms/LearningResource> ,
+        <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
+    sdo:rangeIncludes 
+        <http://schema.org/CollegeOrUniversity> ,
+        <http://schema.org/Organization> ; 
+    rdfs:isDefinedBy <http://schema.org/> .
+    
+ceterms:ownedBy a rdf:Property ;
+    rdfs:label "owned by"@en ;
+    rdfs:comment "Organization or person with an enforceable claim or legal title to the resource."@en ;
+    sdo:domainIncludes 
+        <https://opensource.ieee.org/lmt/terms/LearningResource> ,
+        <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
+    sdo:rangeIncludes 
+        <http://schema.org/CollegeOrUniversity> ,
+        <http://schema.org/Organization> ; 
+    rdfs:isDefinedBy <http://schema.org/> .
+    
+dct:spatial a rdf:Property ;
+    rdfs:label "spatial"@en ;
+    rdfs:comment "Spatial characteristics of the resource."@en ;
+    dct:description "A spatial/geographic region or a named place."@en-US ;
+    sdo:domainIncludes  
+        <https://opensource.ieee.org/lmt/terms/LearningResource> ,
+        <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
+    sdo:rangeIncludes <http://purl.org/dc/terms/Location> ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+
+dct:subject a rdf:Property ;
+    rdfs:label "subject"@en ;
+    rdfs:comment "A topic of the resource."@en ;
+    sdo:domainIncludes  
+        <https://opensource.ieee.org/lmt/terms/LearningResource> ,
+        <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
+    sdo:rangeIncludes <http://www.w3.org/2004/02/skos/core#Concept> ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+    
+lrmi:teaches a rdf:Property ;
+    rdfs:label "teaches"@en ;
+    rdfs:comment "The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term."@en-US ;
+    dct:description "A specific Competency that this learning object is intended to teach."@en-US ;
+    sdo:domainIncludes  
+        <https://opensource.ieee.org/lmt/terms/LearningResource> ,
+        <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
+    sdo:rangeIncludes <http://www.w3.org/2004/02/skos/core#Concept> ;
+    rdfs:isDefinedBy <http://purl.org/dcx/lrmi-terms/> .
+    
+dct:temporal a rdf:Property ;
+    rdfs:label "temporal"@en ;
+    rdfs:comment "Temporal characteristics of the resource."@en ;
+    dct:description "Temporal characteristics may denote either aspects of the subject matter of the resource (e.g., a named historical era) or aspects of the jurisdictional applicability (e.g., where the resource is valid or specifically intended)."@en-US ;
+    sdo:domainIncludes  
+        <https://opensource.ieee.org/lmt/terms/LearningResource> ,
+        <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
+    sdo:rangeIncludes <http://www.w3.org/2004/02/skos/core#Concept> ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+    
+dct:title a rdf:Property ;
+    rdfs:label "title"@en ;
+    rdfs:comment "A name given to the resource."@en ;
+    dct:description "A basic name for the Learning Object; what one would expect to use to distinguish it from others like it."@en-US ;
+    sdo:domainIncludes  
+        <https://opensource.ieee.org/lmt/terms/LearningResource> ,
+        <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
+    sdo:rangeIncludes <http://www.w3.org/2000/01/rdf-schema#langString> ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .   
