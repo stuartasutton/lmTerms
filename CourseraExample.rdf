@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:sdo="https://schema.org/"
+         xmlns:ctdl="https://purl.org/ctdl/terms/"
+         xmlns:dct="http://purl.org/dct/terms/"
+         xmlns:lrmi="http://purl.org/dctx/lrmi-terms/"
+         xmlns:scd="https://opensource.ieee.org/scd/"
+         xmlns:lmt="https://opensource.ieee.org/lmt/">
+
+  <lmt:LearningResource rdf:about="https://example.org/a82d15cf-8a5a-40f6-a1b0-78edd995ede0">
+    <ctdl:identifier>a82d15cf-8a5a-40f6-a1b0-78edd995ede0</ctdl:identifier>
+    <ctdl:source rdf:resource="https://www.coursera.org/learn/bioinformatics"/>
+    <dct:title xml:lang="en-US">Biology Meets Programming: Bioinformatics for Beginners</dct:title>
+    <ctdl:description xml:lang="en-US">This course will cover algorithms for solving various biological problems along with a handful of programming challenges helping you implement these algorithms in Python. It offers a gently-paced introduction to our Bioinformatics Specialization (https://www.coursera.org/specializations/bioinformatics), preparing learners to take the first course in the Specialization, &quot;Finding Hidden Messages in DNA&quot; (https://www.coursera.org/learn/dna-analysis).
+Each of the four weeks in the course will consist of two required components.  First, an interactive textbook provides Python programming challenges that arise from real biological problems. If you haven't programmed in Python before, not to worry! We provide &quot;Just-in-Time&quot; exercises from the Codecademy Python track (https://www.codecademy.com/learn/python). And each page in our interactive textbook has its own discussion forum, where you can interact with other learners. Second, each week will culminate in a summary quiz.
+Lecture videos are also provided that accompany the material, but these videos are optional.</ctdl:description>
+    <ctdl:offeredBy rdf:resource="https://www.coursera.org/"/>
+    <ctdl:ownedBy rdf:resource="https://www.coursera.org/ucsd"/>
+    <lrmi:learningResourceType>
+      <sdo:DefinedTerm>
+        <sdo:name xml:lang="en-US">Course</sdo:name>
+      </sdo:DefinedTerm>
+    </lrmi:learningResourceType>
+
+    <ctdl:duration>P28D</ctdl:duration>
+    <ctdl:timeRequired>T18H</ctdl:timeRequired>
+    
+    <ctdl:audience>
+      <sdo:DefinedTerm>
+        <sdo:name xml:lang="en-US">Student</sdo:name>
+      </sdo:DefinedTerm>
+    </ctdl:audience>
+
+    <dct:educationLevel>
+      <sdo:DefinedTerm>
+        <sdo:name xml:lang="en-US">Beginner</sdo:name>
+      </sdo:DefinedTerm>
+    </dct:educationLevel>
+
+    <dct:instructionalMethod>
+      <sdo:DefinedTerm>
+        <sdo:name>Weekly Recorded Lectures</sdo:name>
+      </sdo:DefinedTerm>
+    </dct:instructionalMethod>
+
+    <dct:instructionalMethod>
+      <sdo:DefinedTerm>
+        <sdo:name>Interactive Text Book</sdo:name>
+      </sdo:DefinedTerm>
+    </dct:instructionalMethod>
+
+    <dct:instructionalMethod>
+      <sdo:DefinedTerm>
+        <sdo:name>Four Weekly Practice Exercises</sdo:name>
+      </sdo:DefinedTerm>
+    </dct:instructionalMethod>
+
+    <dct:instructionalMethod>
+      <sdo:DefinedTerm>
+        <sdo:name>Four Weekly Quizzes (20 min. ea.)</sdo:name>
+      </sdo:DefinedTerm>
+    </dct:instructionalMethod>
+    
+    <sdo:subTitleLanguage>ar</sdo:subTitleLanguage>
+    <sdo:subTitleLanguage>fr</sdo:subTitleLanguage>
+    <sdo:subTitleLanguage>it</sdo:subTitleLanguage>
+    <sdo:subTitleLanguage>pt-BR</sdo:subTitleLanguage>
+    <sdo:subTitleLanguage>pt-PT</sdo:subTitleLanguage>
+    <sdo:subTitleLanguage>vi-VN</sdo:subTitleLanguage>
+    <sdo:subTitleLanguage>de</sdo:subTitleLanguage>
+    <sdo:subTitleLanguage>ru-RU</sdo:subTitleLanguage>
+    <sdo:subTitleLanguage>es-ES</sdo:subTitleLanguage>
+    
+    <dct:language>en</dct:language>
+    <lrmi:teaches>
+      <scd:CompetencyDefinition>
+        <scd:competencyStatement xml:lang="en-us">Information Technology</scd:competencyStatement>
+      </scd:CompetencyDefinition>
+    </lrmi:teaches>
+
+    <lrmi:teaches>
+      <scd:CompetencyDefinition>
+        <scd:competencyStatement xml:lang="en-us">Bioinformatics Algorithms</scd:competencyStatement>
+      </scd:CompetencyDefinition>
+    </lrmi:teaches>
+
+    <lrmi:teaches>
+      <scd:CompetencyDefinition>
+        <scd:competencyStatement xml:lang="en-US">Biology</scd:competencyStatement>
+      </scd:CompetencyDefinition>
+    </lrmi:teaches>
+
+    <lrmi:teaches>
+      <scd:CompetencyDefinition>
+        <scd:competencyStatement xml:lang="en-US">Python Programming</scd:competencyStatement>
+      </scd:CompetencyDefinition>
+    </lrmi:teaches>
+
+    <lmt:hasEvent rdf:resource="https://example.org/0bdd3321-5862-4b9c-a910-65a7c4f245f5"/>
+  </lmt:LearningResource>
+
+  <lmt:LearningEvent rdf:about="https://example.org/0bdd3321-5862-4b9c-a910-65a7c4f245f5">
+    <lmt:isEventOf rdf:resource="https://example.org/a82d15cf-8a5a-40f6-a1b0-78edd995ede0"/>
+    <ctdl:startDate>2013-04-15</ctdl:startDate>
+    <ctdl:endDate>2013-05-13</ctdl:endDate>
+    <sdo:eventSchedule rdf:resource="https://example.org/d1c45c15-7ecb-4f09-8cc8-780a3ec8600d"/>
+    
+    <lmt:instructor>
+      <sdo:Person>
+        <sdo:name>Pavel Pevzner</sdo:name>
+      </sdo:Person>
+    </lmt:instructor>
+
+    <lmt:instructor>
+      <sdo:Person>
+        <sdo:name>Phillip Compeau</sdo:name>
+      </sdo:Person>
+    </lmt:instructor>
+    
+    <dct:hasPart>
+      <lmt:LearningEvent rdf:about="https://example.org/92be6ee7-8a74-45ea-8cc8-de2c6fecad88">
+        <dct:isPartOf rdf:resource="https://example.org/0bdd3321-5862-4b9c-a910-65a7c4f245f5"/>
+        <lrmi:learningResourceType>Week 1</lrmi:learningResourceType>
+      </lmt:LearningEvent>
+    </dct:hasPart>
+    
+    <dct:hasPart>
+      <lmt:LearningEvent rdf:about="https://example.org/537e1b53-a318-4a28-9071-76a3fe003edf">
+        <dct:isPartOf rdf:resource="https://example.org/0bdd3321-5862-4b9c-a910-65a7c4f245f5"/>
+        <lrmi:learningResourceType>Week 2</lrmi:learningResourceType>
+      </lmt:LearningEvent>
+    </dct:hasPart>
+    
+    <dct:hasPart>
+      <lmt:LearningEvent rdf:about="https://example.org/35935c6b-65a8-457b-8bee-cb41e6785ca8">
+        <dct:isPartOf rdf:resource="https://example.org/0bdd3321-5862-4b9c-a910-65a7c4f245f5"/>
+        <lrmi:learningResourceType>Week 3</lrmi:learningResourceType>
+      </lmt:LearningEvent>
+    </dct:hasPart>
+    
+    <dct:hasPart>
+      <lmt:LearningEvent rdf:about="https://example.org/ea761722-798d-40e0-b5af-a9cf6a0cf855">
+        <dct:isPartOf rdf:resource="https://example.org/0bdd3321-5862-4b9c-a910-65a7c4f245f5"/>
+        <lrmi:learningResourceType>Week 4</lrmi:learningResourceType>
+      </lmt:LearningEvent>
+    </dct:hasPart>
+  </lmt:LearningEvent>
+
+</rdf:RDF>
