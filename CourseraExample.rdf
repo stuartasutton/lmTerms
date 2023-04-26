@@ -39,25 +39,25 @@ Lecture videos are also provided that accompany the material, but these videos a
 
     <dct:instructionalMethod>
       <sdo:DefinedTerm>
-        <sdo:name>Weekly Recorded Lectures</sdo:name>
+        <sdo:name xml:lang="en-US">Weekly Recorded Lectures</sdo:name>
       </sdo:DefinedTerm>
     </dct:instructionalMethod>
 
     <dct:instructionalMethod>
       <sdo:DefinedTerm>
-        <sdo:name>Interactive Text Book</sdo:name>
+        <sdo:name xml:lang="en-US">Interactive Text Book</sdo:name>
       </sdo:DefinedTerm>
     </dct:instructionalMethod>
 
     <dct:instructionalMethod>
       <sdo:DefinedTerm>
-        <sdo:name>Four Weekly Practice Exercises</sdo:name>
+        <sdo:name xml:lang="en-US">Four Weekly Practice Exercises</sdo:name>
       </sdo:DefinedTerm>
     </dct:instructionalMethod>
 
     <dct:instructionalMethod>
       <sdo:DefinedTerm>
-        <sdo:name>Four Weekly Quizzes (20 min. ea.)</sdo:name>
+        <sdo:name xml:lang="en-US">Four Weekly Quizzes (20 min. ea.)</sdo:name>
       </sdo:DefinedTerm>
     </dct:instructionalMethod>
     
@@ -107,13 +107,13 @@ Lecture videos are also provided that accompany the material, but these videos a
     
     <lmt:instructor>
       <sdo:Person>
-        <sdo:name>Pavel Pevzner</sdo:name>
+        <sdo:name xml:lang="en-US">Pavel Pevzner</sdo:name>
       </sdo:Person>
     </lmt:instructor>
 
     <lmt:instructor>
       <sdo:Person>
-        <sdo:name>Phillip Compeau</sdo:name>
+        <sdo:name xml:lang="en-US">Phillip Compeau</sdo:name>
       </sdo:Person>
     </lmt:instructor>
     
