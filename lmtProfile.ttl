@@ -1,5 +1,8 @@
-@prefix ceterms: <http://purl.org/ctdl/terms/> .
+@prefix asn: <http://purl.org/ASN/schema/core/> .
+@prefix ceasn: <https://purl.org/ctdlasn/terms/> .
+@prefix ceterms: <https://purl.org/ctdl/terms/> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix frbr: <http://iflastandards.info/ns/fr/frbr/frbrer/> .
 @prefix lmt: <https://opensource.ieee.org/lmt/terms/> .
 @prefix lrmi: <http://purl.org/dcx/lrmi-terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -20,20 +23,23 @@
 
 lmt:LearningEvent a rdfs:Class ;
     rdfs:label "Learning Event"@en ;
-    rdfs:comment "An event based on a LearningResource."@en ;
-    dct:description "An ephemeral resource with unique combinations of time, space (place), agency and other event-specific attributes; a fixing (recording) of a LearningEvent in any tangible medium, now known or later developed, results in a new persistent LearningResource."@en-US ;
+    rdfs:comment "A temporal opportunity or manifestation for learning that is contextualized around resourcing constraints, such as time, space, and cost."@en ;
+    skos:note "An ephemeral resource with unique combinations of time, space (place), agency and other event-specific attributes; a fixing (recording) of a LearningEvent in any tangible medium, now known or later developed, results in a new persistent LearningResource."@en-US ;
     rdfs:subClassOf lmt:LearningObject ;
     rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
     
 lmt:LearningObject a rdfs:Class ;
     rdfs:label "Learning Object"@en ;
-    rdfs:comment "An abstract class of which LearningResource and LearningInstantiation are subclasses."@en ;
+    rdfs:comment "The abstract class of all metadata descriptions of both ephemeral learning events and persistent resources that explicitly involve, specify, or entail a learning activity or learning experience."@en ;
+    skos:note "A superclass of which LearningResource and LearningEvent used in metadata descriptions are subclasses. The LearningObject class should not be used directly in metadata descriptions where the LearningEvent and LearningResource subclasses are adequate."@en ;
     rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
     
-lmt:LearningResource a rdfs:Class ;
+lrmi:LearningResource a rdfs:Class ;
     rdfs:label "Learning Resource"@en ;
-    rdfs:comment "A persistent resource that has one or more physical or digital representations, and that explicitly involves, specifies, or entails a learning activity or learning experience."@en ;
-    rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
+    rdfs:comment "A persistent resource that has one or more physical or digital representations, and that explicitly involves, specifies or entails a learning activity or learning experience."@en ;
+    skos:scopeNote "LearningResource is expected to be used as an addition to a primary type such as http://purl.org/ontology/bibo/Book, https://schema.org/Video, http://purl.org/dc/terms/PhysicalResource etc."@en ;
+    skos:note "LMT Annotation: The LearningResource is intended to function as a digital resource that is usable and shareable, and can be rich in context."@en ;
+    rdfs:isDefinedBy <http://purl.org/dcx/lrmi-terms/> .
     
 #------------
 # PROPERTIES
@@ -45,21 +51,26 @@ lrmi:assesses a rdf:Property ;
     sdo:domainIncludes  
         <https://opensource.ieee.org/lmt/terms/LearningResource> ,
         <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
-    sdo:rangeIncludes <https://opensource.ieee.org/scd/terms/CompetencyDefinition> ;
-    rdfs:isDefinedBy <http://purl.org/dcx/lrmi-terms/> .
+    sdo:rangeIncludes 
+        <https://opensource.ieee.org/scd/terms/CompetencyDefinition> ,
+        <https://purl.org/ctdlasn/terms/Competency> ,
+        <http://purl.org/ASN/schema/core/Statement> ;
+    rdfs:isDefinedBy <http://purl.org/dcx/lrmi-terms/> ;
     
 dct:audience a rdf:Property ;
     rdfs:label "audience"@en ;
-    rdfs:comment "The item being described is intended to assess the competency or learning outcome defined by the referenced term."@en ;
+    rdfs:comment "Class of agents for whom the resource is intended or useful."@en ;
+    skos:note "Recommended practice is to use this property with non-literal values from a vocabulary of audience types."@en ;
     sdo:domainIncludes  
         <https://opensource.ieee.org/lmt/terms/LearningResource> ,
         <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
-    sdo:rangeIncludes <https://opensource.ieee.org/scd/terms/CompetencyDefinition> ;
+    sdo:rangeIncludes <http://purl.org/dc/terms/AgentClass> ;
     rdfs:isDefinedBy <http://purl.org/dc/terms/> .
     
 dct:description a rdf:Property ;
     rdfs:label "description"@en ;
     rdfs:comment "An account of the resource."@en ;
+    skos:sopeNote "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."@en ;
     sdo:domainIncludes  
         <https://opensource.ieee.org/lmt/terms/LearningResource> ,
         <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
@@ -69,12 +80,30 @@ dct:description a rdf:Property ;
 lrmi:educationLevel a rdf:Property ;
     rdfs:label "education level"@en ;
     rdfs:comment "The level of a resource in terms of progression through an educational or training context."@en ;
+    skos:example "Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators."@en ;
     sdo:domainIncludes  
         <https://opensource.ieee.org/lmt/terms/LearningResource> ,
         <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
     sdo:rangeIncludes <http://www.w3.org/2004/02/skos/core#Concept> ;
     rdfs:isDefinedBy <http://purl.org/dcx/lrmi-terms/> .
     
+dct:format a rdf:Property ;
+    rdfs:label "format"@en ;
+    rdfs:comment "The file format, physical medium, or dimensions of the resource."@en ;
+    skos:scopeNote "Recommended practice is to use a controlled vocabulary where available. For example, for file formats one could use the list of Internet Media Types [MIME]. Examples of dimensions include size and duration.@en ;
+    skos:note "LMT Annotation: The format property is constrained to just the InternetMediaType [MIME]"@en ; 
+    sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ,
+    sdo:rangeIncludes <https://www.iana.org/assignments/media-types/media-types.xhtml> ; 
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+    
+frbr:hasAdaption a rdf:Property ;
+    rdfs:label "has adaption"@en ;
+    rdfs:comment "Relates a prior work to another work that represents a modification of the content of the prior work for a purpose, use, or medium other than that for which it was originally intended. "@en ;
+    skos:note "LMT Annotation: The modification of the content of the prior work must be sufficient in degree to warrant the adaptated work being considered as a new work autonomous with respect to the work being adapted. If the change does not alter the original intention, use dct:hasVersion."@en ;
+    sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
+    sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;    
+    rdfs:isDefinedBy <http://iflastandards.info/ns/fr/frbr/frbrer/> .
+
 lmt:hasEvent a rdf:Property ;
     rdfs:label "has event"@en ;
     rdfs:comment "A related event based on this LearningResource."@en ;
@@ -82,28 +111,33 @@ lmt:hasEvent a rdf:Property ;
     sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/LearningEvent> ; 
     rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
     
+lmt:hasFormat a rdf:Property ;
+    rdfs:label "has format"@en ;
+    rdfs:comment "A related resource that is substantially the same as the pre-existing described resource, but in another format."@en ;
+    skos:note "This property is intended to be used with non-literal values. This property is an inverse property of Is Format Of."@en ;
+    sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
+    sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/LearningR> ; 
+    rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
+    
 dct:hasPart a rdf:Property ;
     rdfs:label "has part"@en ;
     rdfs:comment "A related resource that is included either physically or logically in the described resource."@en ;
-    sdo:domainIncludes  
-        <https://opensource.ieee.org/lmt/terms/LearningResource> ,
-        <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
+    sdo:domainIncludes  <https://opensource.ieee.org/lmt/terms/LearningResource> ;
     sdo:rangeIncludes 
         <https://opensource.ieee.org/lmt/terms/LearningResource> ,
         <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
     rdfs:isDefinedBy <http://purl.org/dc/terms/> .
     
-lmt:hasRepresentation a rdf:Property ;
-    rdfs:label "has representation"@en ;
-    rdfs:comment "A related LearningResource representing the same work and expression in a different tangible medium (format)."@en ;
-    dct:description "For a related resource that alters the work and expression, use either the hasVersion or isBasedOn property depending on the circumstances."@en-US ;
-    sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
-    sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ; 
-    rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
+    
+    
+    
+    
     
 dct:hasVersion a rdf:Property ;
     rdfs:label "has version"@en ;
     rdfs:comment "A related resource that is a version, edition, or adaptation of the described resource."@en ;
+    skos:scopeNote "Changes in version imply substantive changes in content rather than differences in format. This property is intended to be used with non-literal values. This property is an inverse property of Is Version Of."@en ;
+    skos:note "LMT Annotation: A linked revision of this object, pointing forward to the revised object. It is expected that revisions happen internal to an organization.  Note that what constitutes an \"adaptation\" is broad and both \"hasRepresentation\" and \"isBasedOn\" should be consulted before determining if this property is appropriate for the type of modification."@en ;
     sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
     sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/Learningresource> ; 
     rdfs:isDefinedBy <http://purl.org/dc/terms/> .
