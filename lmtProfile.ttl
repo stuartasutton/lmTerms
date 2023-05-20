@@ -114,7 +114,7 @@ lmt:hasEvent a rdf:Property ;
 lmt:hasFormat a rdf:Property ;
     rdfs:label "has format"@en ;
     rdfs:comment "A related resource that is substantially the same as the pre-existing described resource, but in another format."@en ;
-    skos:note "This property is intended to be used with non-literal values. This property is an inverse property of Is Format Of."@en ;
+    skos:scopeNote "This property is intended to be used with non-literal values. This property is an inverse property of Is Format Of."@en ;
     sdo:domainIncludes <https://opensource.ieee.org/lmt/terms/LearningResource> ;
     sdo:rangeIncludes <https://opensource.ieee.org/lmt/terms/LearningR> ; 
     rdfs:isDefinedBy <https://opensource.ieee.org/lmt/terms/> .
