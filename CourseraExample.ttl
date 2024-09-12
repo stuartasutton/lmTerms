@@ -16,7 +16,7 @@ Lecture videos are also provided that accompany the material, but these videos a
     ctdl:offeredBy <https://www.coursera.org/> ;
     ctdl:ownedBy <https://www.coursera.org/ucsd> ;
     lrmi:learningResourceType [
-        a sdo:DefinedTerm> ;
+        a sdo:DefinedTerm ;
         sdo:name "Course"@en-US
     ] ;
     ctdl:duration "P28D" ;
