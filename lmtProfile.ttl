@@ -126,12 +126,7 @@ dct:hasPart a rdf:Property ;
     sdo:rangeIncludes 
         <https://opensource.ieee.org/lmt/terms/LearningResource> ,
         <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
-    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
-    
-    
-    
-    
-    
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .  
     
 dct:hasVersion a rdf:Property ;
     rdfs:label "has version"@en ;
