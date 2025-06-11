@@ -128,11 +128,6 @@ dct:hasPart a rdf:Property ;
         <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
     rdfs:isDefinedBy <http://purl.org/dc/terms/> .
     
-    
-    
-    
-    
-    
 dct:hasVersion a rdf:Property ;
     rdfs:label "has version"@en ;
     rdfs:comment "A related resource that is a version, edition, or adaptation of the described resource."@en ;
