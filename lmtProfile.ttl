@@ -254,4 +254,4 @@ dct:title a rdf:Property ;
         <https://opensource.ieee.org/lmt/terms/LearningResource> ,
         <https://opensource.ieee.org/lmt/terms/LearningEvent> ;
     sdo:rangeIncludes <http://www.w3.org/2000/01/rdf-schema#langString> ;
-    rdfs:isDefinedBy <http://purl.org/dc/terms/> .   
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
